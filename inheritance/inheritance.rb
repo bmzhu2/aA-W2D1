@@ -1,6 +1,4 @@
 class Employee
-  attr_reader :name, :title, :salary, :boss
-
   def initialize(name, title, salary, boss, employees = nil)
     @name = name
     @title = title
@@ -12,11 +10,11 @@ class Employee
     salary * multiplier
   end
 
-  
+  private
+  attr_reader :name, :title, :salary, :boss
 end
 
 class Manager < Employee
-  attr_reader :employees
   def initialize(name, title, salary, boss, employees)
     @employees = employees
     super
@@ -31,4 +29,6 @@ class Manager < Employee
     sum * multiplier
   end
 
+  private
+  attr_reader :employees
 end
