@@ -35,6 +35,8 @@ class Board
   end
 
   def valid_pos?(pos)
+    bounds = (0...8).to_a
+    bounds.include?(pos[0]) && bounds.include?(pos[1])
   end
 
   def add_piece(piece, pos)
